@@ -1,0 +1,292 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Konteyner */
+.login-container {
+  background-color: #fff;
+  padding: 40px;
+  width: 350px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Instagram Logosu */
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+  color: #262626;
+  margin-bottom: 30px;
+}
+
+/* Giriş Formu */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3897f0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Divider (YA DA) */
+.divider {
+  margin: 20px 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  background: #dbdbdb;
+  position: absolute;
+  top: 50%;
+  width: 40%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* Facebook Giriş */
+.facebook-login {
+  background: none;
+  border: none;
+  color: #000000;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-left: 47px;
+  margin-top: 20px;
+}
+
+.facebook-login img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Şifremi Unuttum */
+.forgot-password {
+  display: block;
+  margin-top: 12px;
+  color: #00376b;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* Kayıt Ol Linki */
+.signup {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #262626;
+}
+
+.signup a {
+  color: #3897f0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  display: block;
+  margin: 20px 100px;
+  left: 20%;
+  
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  height: 100vh;
+  padding: 100px;
+  left: 50px;
+}
+
+.site-footer {
+  background-color: #ffffff;
+  color: #000;
+  font-size: 12px;
+  padding: 15px 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #000;             /* Linkler siyah */
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 12px;
+  color: #000 !important;
+}
+
+
+
+.site-footer .footer-nav {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #000000;
+  align-items: center;
+}
+
+
+.footer-bottom select {
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #000;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  appearance: none; /* Tarayıcı varsayılan okunu gizlemek için */
+}
+
+
+.language-select {
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  justify-content: space-between;
+}
+
+main {
+  flex-grow: 1;
+}
+
+
+/* Mobil cihazlar için (0 - 768px) */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+    height: auto;
+  }
+
+  .main-image {
+    max-width: 90%;
+    margin: 0 auto;
+    display: none;
+  }
+
+
+
+  .login-container {
+    width: 100%;
+    max-width: 350px;
+    padding: 30px 20px;
+  }
+
+  .facebook-login {
+    margin-left: 0;
+    font-size: 16px;
+    margin: 20px auto 0 auto;
+    justify-content: center;  /* İçeriği ortala */
+
+  }
+
+  .footer-links {
+    gap: 10px;
+    font-size: 11px;
+    padding: 10px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .site-footer {
+    padding: 20px 10px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  form input, form button {
+    font-size: 13px;
+  }
+
+  .signup {
+    font-size: 13px;
+  }
+}
