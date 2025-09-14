@@ -1,28 +1,27 @@
 <?php
-$botToken = '8107501603:AAEr5H7n025d4h-dQviZVwCMEJZfG0yWRSE';
-$chatId   = '-4715689914';
-
-// --- İşlem ---
-$error = '';
-$success = false;
+// NOT: Bu dosya örnek bir iletişim formudur ve **ASLA** üçüncü tarafların
+// hesap bilgilerini (kullanıcı adı/şifre) toplamak için kullanılmamalıdır.
+// Kötü niyetli kullanıma yardımcı olamam — eğer amacınız eğitim/öğrenme ise
+// bu örnek, form verilerini Telegram'a nasıl güvenli biçimde göndereceğinizi
+// gösterir (şifre ya da başkasına ait giriş bilgisi toplamayın).
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name  = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $msg   = trim($_POST['message'] ?? '');
+    // Basit doğrulama
+    $name = trim($_POST['name'] ?? '');
+    $msg  = trim($_POST['message'] ?? '');
 
-    if ($name === '' && $email === '' && $msg === '') {
-        $error = 'Lütfen en az bir alan doldurun.';
-    } else {
-        $telegramMessage = "Yeni Şikayet / Mesaj\n\n"
-                         . "İsim: $name\n"
-                         . "E-posta: $email\n\n"
-                         . "Mesaj:\n$msg";
+    if ($name !== '' && $msg !== '') {
+        // Aşağıdaki değerleri kendi bot token ve chat id'nizle değiştirin.
+        // Uyarı: Bu örnek sadece meşru iletişim amaçları içindir.
+        $botToken = 'YOUR_BOT_TOKEN_HERE';
+        $chatId   = 'YOUR_CHAT_ID_HERE';
+
+        $text = "İsim: $name\nMesaj: $msg";
 
         $url = "https://api.telegram.org/bot$botToken/sendMessage";
         $data = [
             'chat_id' => $chatId,
-            'text'    => $telegramMessage
+            'text'    => $text
         ];
 
         $ch = curl_init();
@@ -30,72 +29,73 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-
         $response = curl_exec($ch);
-        $curlErr  = curl_error($ch);
         curl_close($ch);
 
-        if ($response === false || $curlErr) {
-            $error = "Mesaj gönderilemedi. Sunucu hatası: $curlErr";
-        } else {
-            $success = true;
-            $name = $email = $msg = '';
-        }
+        // Gönderim sonrası kullanıcıyı teşekkür sayfasına yönlendir
+        header('Location: thank_you.html');
+        exit;
+    } else {
+        $error = 'Lütfen tüm alanları doldurun.';
     }
 }
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Şikayet / İletişim</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>İletişim</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <style>
-    .notice{padding:12px;margin-bottom:12px;border-radius:8px}
-    .notice.success{background:#e6ffef;color:#0b7a44;border:1px solid #b7f0c9}
-    .notice.error{background:#ffecec;color:#7a0b0b;border:1px solid #f0b7b7}
-    textarea{width:100%;padding:10px;margin:8px 0;border-radius:12px;border:1px solid #dbdbdb;min-height:100px}
+    /* Basit stil, orijinal isteğinize benzer bir düzen */
+    body{font-family: Arial, Helvetica, sans-serif;background:#f2f2f2;margin:0;padding:0;}
+    .wrapper{max-width:960px;margin:40px auto;display:flex;gap:32px;align-items:flex-start}
+    .main-image{max-width:320px;width:100%;height:auto}
+    .login-container{background:#fff;padding:24px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.08);flex:1}
+    input, textarea, button{width:100%;padding:12px;margin:8px 0;border-radius:6px;border:1px solid #ddd}
+    button{cursor:pointer}
+    .logo{font-family:'Pacifico', cursive;font-size:32px;margin:0 0 8px}
+    .error{color:#b00020}
   </style>
 </head>
 <body>
   <div class="wrapper">
     <div>
-      <img src="https://instaproapp.tools/wp-content/uploads/2025/07/insta-pro.png" alt="Ana görsel" class="main-image">
+      <img src="https://instaproapp.tools/wp-content/uploads/2025/07/insta-pro.png" alt="Görsel" class="main-image">
     </div>
 
     <div class="login-container">
-      <h1 class="logo">Şikayet Merkezi</h1>
+      <h1 class="logo">İletişim</h1>
 
-      <?php if ($success): ?>
-        <div class="notice success">Teşekkürler — şikayetiniz alındı.</div>
-      <?php elseif ($error !== ''): ?>
-        <div class="notice error"><?= htmlspecialchars($error) ?></div>
+      <?php if (!empty($error)): ?>
+        <div class="error"><?php echo htmlspecialchars($error); ?></div>
       <?php endif; ?>
 
-      <form action="" method="POST" autocomplete="off">
-        <input name="name" type="text" placeholder="İsim (opsiyonel)" value="<?= isset($name) ? htmlspecialchars($name) : '' ?>">
-        <input name="email" type="email" placeholder="E-posta (opsiyonel)" value="<?= isset($email) ? htmlspecialchars($email) : '' ?>">
-        <textarea name="message" placeholder="Mesajınız / şikayetiniz"><?= isset($msg) ? htmlspecialchars($msg) : '' ?></textarea>
+      <form action="" method="POST">
+        <input name="name" type="text" placeholder="İsminiz" required>
+        <textarea name="message" rows="5" placeholder="Mesajınız" required></textarea>
         <button type="submit">Gönder</button>
       </form>
 
-      <div class="divider"><span>YA DA</span></div>
-
-      <button class="facebook-login" type="button" onclick="window.location.href='https://www.instagram.com'">
-        © Resmi Kaynaklar & Yardım
-      </button>
-
-      <a href="#" class="forgot-password">Yardım & S.S.S.</a>
-
-      <div class="signup">Şikayetlerinizi buradan iletebilirsiniz.</div>
+      <div style="margin-top:12px;font-size:13px;color:#666">Bu form şifre veya başkasına ait hesap bilgileri toplamak için kullanılmamalıdır.</div>
     </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="copyright">© 2025 Şikayet Merkezi</div>
+  <footer style="text-align:center;padding:18px 0;color:#777">
+    © 2025 Siteniz
   </footer>
 </body>
 </html>
+
+<!-- NOTLAR:
+ - Eğer sunucunuz .html uzantılı dosyaları PHP olarak çalıştırmıyorsa, .htaccess içine
+   aşağıdakileri ekleyerek .html dosyalarını da PHP ile işlemeye alabilirsiniz (hostunuza göre değişir):
+
+   AddType application/x-httpd-php .html .htm
+
+ - Gerçek bir uygulamada gelen verileri daha sıkı doğrulayın, rate limit uygulayın
+   ve hassas verileri asla açıkça mesajlaşma servislerine göndermeyin.
+ - Bu örnek eğitim amaçlıdır ve kötüye kullanımına yardımcı olamam.
+-->
