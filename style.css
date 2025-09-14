@@ -1,292 +1,497 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-/* Konteyner */
-.login-container {
-  background-color: #fff;
-  padding: 40px;
-  width: 350px;
-  border: 1px solid #dbdbdb;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+body {
+  background-color: #f7f7fb;
 }
 
-/* Instagram Logosu */
-.logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 36px;
-  color: #262626;
-  margin-bottom: 30px;
-}
-
-/* Giriş Formu */
-form input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  background-color: #fafafa;
-  border: 1px solid #dbdbdb;
-  border-radius: 12px;
-  font-size: 14px;
-}
-
-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #3897f0;
+.top-bar {
+  background-color: #1e1e2f;
   color: white;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 14px;
-  margin-top: 10px;
-  cursor: pointer;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
 }
 
-/* Divider (YA DA) */
-.divider {
-  margin: 20px 0;
-  position: relative;
-  text-align: center;
-  font-size: 12px;
-  color: #999;
-}
-
-.divider::before,
-.divider::after {
-  content: "";
-  height: 1px;
-  background: #dbdbdb;
-  position: absolute;
-  top: 50%;
-  width: 40%;
-}
-
-.divider::before {
-  left: 0;
-}
-
-.divider::after {
-  right: 0;
-}
-
-/* Facebook Giriş */
-.facebook-login {
-  background: none;
-  border: none;
-  color: #000000;
+.count {
+  color: #00d68f;
   font-weight: bold;
   font-size: 18px;
+}
+
+.live-btn {
+  background-color: #00d68f;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 20px;
+}
+
+.navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-left: 47px;
-  margin-top: 20px;
+  padding: 20px;
+  margin: 15px;
 }
 
-.facebook-login img {
-  width: 18px;
-  height: 18px;
-}
-
-/* Şifremi Unuttum */
-.forgot-password {
-  display: block;
-  margin-top: 12px;
-  color: #00376b;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-/* Kayıt Ol Linki */
-.signup {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #262626;
-}
-
-.signup a {
-  color: #3897f0;
+.logo {
+  font-size: 24px;
   font-weight: bold;
-  text-decoration: none;
+  color: #5c60f5;
+  width: 150px;
 }
 
-.main-image {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 12px;
-  display: block;
-  margin: 20px 100px;
-  left: 20%;
-  
-}
-
-.wrapper {
+.navbar ul {
+  list-style: none;
   display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-buttons a {
+  margin-left: 15px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: #5c60f5;
+}
+
+.complaint-btn {
+  background-color: #5c60f5;
+  color: white;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 60px;
-  height: 100vh;
-  padding: 100px;
-  left: 50px;
+  padding: 50px 20px;
+  font-size: 100px;
+  margin-left: 50px;
+  position: relative; /* left-center-button için */
 }
 
-.site-footer {
-  background-color: #ffffff;
-  color: #000;
-  font-size: 12px;
-  padding: 15px 20px;
-  font-family: Arial, sans-serif;
-  text-align: center;
+.hero-left h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: 2px;
 }
 
-.site-footer a {
-  color: #000;             /* Linkler siyah */
-  margin: 0 8px;
-  text-decoration: none;
-  font-size: 12px;
-  color: #000 !important;
+.hero-left {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  margin-left: 50px;
 }
 
-
-
-.site-footer .footer-nav {
-  margin-bottom: 10px;
-}
-
-.footer-links {
+.search-box {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 10px;
+  width: 350px;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  overflow: hidden;
+  background-color: white;
 }
 
-.footer-links a {
-  color: #ccc;
-  text-decoration: none;
+.search-box input {
+  flex: 1;
+  border: none;
+  padding: 0 15px;
+  font-size: 16px;
+  outline: none;
+  color: #666;
+}
+
+.search-box button {
+  border: none;
+  padding: 0 25px;
+  background-color: #00d68f;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-left: 1px solid #ccc;
   white-space: nowrap;
 }
 
-.footer-links a:hover {
+.left-center-button {
+  position: absolute; /* burası mutlaka olmalı */
+  top: 115%; /* dikey ortala */
+  left: 30px; /* soldan boşluk */
+  transform: translateY(-50%); /* tam ortalama */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100px;
+  z-index: 10; /* görünsün diye */
+}
+
+.green-button {
+  padding: 20px 35px;
+  background-color: #2ecc71;
+  color: white;
+  font-size: 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.green-button:hover {
+  background-color: #27ae60;
+}
+
+.gorsel-container {
+  position: relative;
+  height: auto; /* yüksekliği otomatik yaptım */
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.gorsel {
+  position: relative; /* absolute yerine relative */
+  top: 0px;
+  right: 0px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* İstatistik Bölümü */
+.stats-section {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f7f7fb;
+}
+
+.stats-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.stats-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.stat-card {
+  background-color: #fff;
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card img {
+  width: 40px;  /* ikonları biraz küçülttüm */
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 30px;
+}
+
+/* Footer */
+.footer {
+  background-color: #20222f;
+  padding: 20px 40px;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  height: 30px;
+}
+
+.footer-nav {
+  flex: 3;
+  text-align: center;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 600;
+}
+
+.footer-nav a:hover {
   text-decoration: underline;
 }
 
-.footer-bottom {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  font-size: 12px;
-  color: #000000;
-  align-items: center;
+.footer-social {
+  flex: 1;
+  text-align: right;
 }
 
-
-.footer-bottom select {
-  background: transparent;
-  border: 1px solid #ccc;
-  color: #000;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  appearance: none; /* Tarayıcı varsayılan okunu gizlemek için */
+.footer-social a {
+  margin-left: 15px;
+  opacity: 0.4;
 }
 
-
-.language-select {
-  cursor: pointer;
-  user-select: none;
+.footer-social a img {
+  height: 24px;
+  vertical-align: middle;
 }
 
-.dropdown-arrow {
-  font-size: 10px;
-  margin-left: 4px;
+.footer-social a:hover {
+  opacity: 1;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
+/* RESPONSIVE TASARIM */
 
-body {
-  justify-content: space-between;
-}
-
-main {
-  flex-grow: 1;
-}
-
-
-/* Mobil cihazlar için (0 - 768px) */
+/* 768px altı için */
 @media (max-width: 768px) {
-  .wrapper {
+  .navbar {
     flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+
+
+  }
+
+    .logo img {
+    height: 35px;
+  }
+
+    .green-button {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+
+  .hero {
+    flex-direction: column;
+    font-size: 40px;
+    margin-left: 20px;
     padding: 20px;
-    gap: 30px;
-    height: auto;
   }
 
-  .main-image {
-    max-width: 90%;
-    margin: 0 auto;
-    display: none;
+  .hero-left {
+    font-size: 32px;
+    margin-left: 0;
+    margin-top: 20px;
   }
 
-
-
-  .login-container {
+  .search-box {
     width: 100%;
     max-width: 350px;
-    padding: 30px 20px;
   }
 
-  .facebook-login {
-    margin-left: 0;
-    font-size: 16px;
-    margin: 20px auto 0 auto;
-    justify-content: center;  /* İçeriği ortala */
+  .left-center-button {
+    position: static;
+    margin: 20px 0;
+    transform: none;
+    top: 95%; /* mobilde yukarı çek */
+    left: 10px; /* kenara yanaştır */
+    transform: translateY(0); /* dikey ortalama iptal */
+    width: 100%;
+    justify-content: center;
+    left: 0;
+
 
   }
 
-  .footer-links {
-    gap: 10px;
-    font-size: 11px;
-    padding: 10px;
-  }
-
-  .footer-bottom {
+  .stats-cards {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+/* 480px altı için */
+@media (max-width: 480px) {
+  .top-bar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+
+
+
+  }
+
+  .count {
+    font-size: 16px;
+    padding: 5px 12px;
+    margin-top: 5px;
+  }
+
+  .live-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+    display: none;
+
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+  }
+
+    .top-bar {
+    flex-direction: column;
+    font-size: 16px;
+    padding: 10px;
     gap: 5px;
-    font-size: 11px;
+    align-items: center;
   }
 
-  .site-footer {
-    padding: 20px 10px;
+    .logo {
+    width: 100%;
+    text-align: center;
   }
 
-  .logo {
-    font-size: 28px;
+    .logo img {
+    display: inline-block;
+    height: 40px;
   }
 
-  form input, form button {
-    font-size: 13px;
+
+
+    .top-bar span {
+    font-size: 14px;
+    white-space: nowrap;
+
+  }
+  
+    .top-bar .count {
+    font-size: 14px;
+    color: #00d68f;
+    font-weight: bold;
   }
 
-  .signup {
-    font-size: 13px;
+
+    .top-bar .live-btn {
+    font-size: 10px;
+    padding: 4px px;
+    white-space: nowrap;
+    flex-shrink: 1;
+    max-width: 80px;
   }
+
+
+    .navbar ul li {
+    font-size: 14px;
+  }
+
+
+  .nav-buttons {
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+  }
+
+  .nav-buttons a {
+    margin-left: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+
+  }
+
+    .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+    .footer-logo img {
+    height: 25px;
+  }
+
+    .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+    .footer-nav a {
+    margin: 0;
+    font-size: 14px;
+  }
+
+    .footer-social {
+    text-align: center;
+  }
+
+  .footer-social a {
+    margin: 0 8px;
+  }
+
 }
